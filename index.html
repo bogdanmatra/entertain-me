@@ -3,28 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Entertain me</title>
+    <title>Entertain Me</title>
+    <link rel="shortcut icon" href="favicon.png" />
 
     <!-- Entertain Me CSS start -->
-    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="app.css">
     <!-- Entertain Me CSS end-->
-
 </head>
 
 <body>
-<div ng-app="entertain-me">
-    <header></header>
-    <main></main>
-    <modal></modal>
+<div ng-app="entertain-me" ng-controller="VenuesController">
+    <div ng-cloak ng-repeat="venue in venues"> {{venue.name}} </div>
 </div>
 
 <!-- CDN Angular JS 1.5.11 -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.js"></script>
-
 <!-- Entertain Me JS start -->
 <script src="app.js"></script>
 <!-- Entertain Me JS end-->
 
 </body>
-
 </html>
