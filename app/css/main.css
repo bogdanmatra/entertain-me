@@ -28,6 +28,10 @@
     .venue-icon {
         max-width: 20px;
     }
+
+    tbody {
+        font-size: 10px;
+    }
 }
 
 /* Added some color */
