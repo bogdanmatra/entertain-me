@@ -30,7 +30,7 @@
     }
 }
 
-tbody {
+tbody tr td:last-child{
     word-break: break-all;
 }
 
