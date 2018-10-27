@@ -12,9 +12,8 @@ A simple single page application which shows the coolest venues around your loca
 * If the user does no agree, the placeholder will show "Choose a place...".
 * The user can choose a different place using the Google Maps Autocomplete component.
 * The user can change the radius of his search and the types of venues he wants to see.
+* Clicking the address in the venue list will show it on Google Maps.
 * While the application is querying the Foursquare API, a loader is shown.
-
-
 
 ### Application Structure
 ```

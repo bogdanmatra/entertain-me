@@ -18,7 +18,11 @@
                 <span>{{category.name}}</span>
             </span>
         </td>
-        <td>{{venue.location.formattedAddress[0]}}</td>
+        <td>
+            <a ng-href="{{'https://www.google.com/maps?q=' + venue.location.formattedAddress[0]}}">
+                {{venue.location.formattedAddress[0]}}
+            </a>
+        </td>
     </tr>
     </tbody>
 </table>
