@@ -3,6 +3,8 @@
  * Sets current location if user accepts sharing his location.
  * Updates the venues list based on the user's selections.
  */
+'use strict';
+
 app.controller('VenuesController', function ($scope, $window, FoursquareAPIService) {
 
     // Initialize variables.

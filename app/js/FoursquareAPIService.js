@@ -1,6 +1,8 @@
 /**
  * A service which connects to the Foursquare HTTP API.
  */
+'use strict';
+
 app.service('FoursquareAPIService', function ($http, FoursquareConstants) {
     /**
      * Returns venues relative to a geolocation (https://developer.foursquare.com/docs/api/venues/explore).
