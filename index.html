@@ -4,31 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Entertain Me</title>
-    <link rel="shortcut icon" href="favicon.png"/>
+    <link rel="shortcut icon" href="app/favicon.png"/>
+    <!-- CDN Bootstrap CSS 4.1.3 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Entertain Me CSS start -->
-    <link rel="stylesheet" href="app.css">
-    <!-- Entertain Me CSS end-->
+    <!-- Entertain Me CSS -->
+    <link rel="stylesheet" href="app/css/main.css">
+
 </head>
 
 <body>
-<div ng-app="entertain-me" ng-controller="VenuesController">
-    <input type="text" class="geolocation-autocomplete" gm-places-autocomplete ng-model="geolocationAutocomplete">
-    <div ng-cloak ng-repeat="venue in venues">
-        <span>{{venue.name}}</span>
-        <span ng-repeat="category in venue.categories">{{category.name}}</span>
-    </div>
+<div class="container" ng-app="entertain-me" ng-controller="VenuesController">
+    <div ng-include="'app/templates/venues-filters.html'"></div>
+    <div ng-include="'app/templates/venues-list.html'"></div>
 </div>
 
 <!-- CDN Angular JS 1.5.11 -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
 <!-- CDN Google Maps API  and Angular JS Google Maps adapter -->
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDrk46T5CDsbGmLafR0gzcmOds_Oqw2_XU"></script>
-<script src="https://jvandemo.github.io/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
+<script src="https://jvandemo.github.io/angularjs-google-maps/dist/angularjs-google-maps.min.js"></script>
 
-<!-- Entertain Me JS start -->
-<script src="app.js"></script>
-<!-- Entertain Me JS end-->
+<!-- Entertain Me JavaScript -->
+<script src="app/js/app.js"></script>
+<script src="app/js/VenuesController.js"></script>
+<script src="app/js/FoursquareConstants.js"></script>
+<script src="app/js/FoursquareAPIService.js"></script>
 
 </body>
 </html>

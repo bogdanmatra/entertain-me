@@ -1,0 +1,29 @@
+<form>
+    <div class="form-group">
+        <label></label>
+        <input type="text" class="form-control" placeholder="{{geolocationPlaceholder}}"
+               ng-model="$parent.formGeolocationAutocomplete" gm-places-autocomplete>
+    </div>
+    <div class="form-group">
+        <label>Radius</label>
+        <select class="form-control" ng-model="$parent.formGeolocationRadius" ng-change="$parent.updateVenues()">
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+            <option value="5000">5000</option>
+            <option value="10000">10000</option>
+        </select>
+        <small class="form-text text-muted">Meters</small>
+    </div>
+    <div class="form-group">
+        <label>Venue Type</label>
+        <select class="form-control" ng-model="$parent.formVenueType" ng-change="$parent.updateVenues()">
+            <option value="">All</option>
+            <option value="food">Food</option>
+            <option value="drinks">Drinks</option>
+            <option value="coffee">Coffee</option>
+            <option value="shops">Shops</option>
+            <option value="arts">Arts</option>
+            <option value="outdoors">Outdoors</option>
+        </select>
+    </div>
+</form>
