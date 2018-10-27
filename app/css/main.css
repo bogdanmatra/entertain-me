@@ -8,15 +8,19 @@
     margin: auto;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid #0ABF53;
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Venue icon mobile support */
@@ -24,4 +28,23 @@
     .venue-icon {
         max-width: 20px;
     }
+}
+
+/* Added some color */
+.autocomplete-focus-point {
+    color: white;
+    background: linear-gradient(45deg, #0ABF53 0%, #4EE5E5 100%);
+}
+
+.autocomplete-focus-point::placeholder {
+    color: #ffffff8a;
+}
+
+.autocomplete-focus-point:focus {
+    color: white;
+    box-shadow: 0 0 0 0.2rem #99e6bb;;
+}
+
+.green-color {
+    color: #0ABF53;
 }

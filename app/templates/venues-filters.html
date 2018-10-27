@@ -1,11 +1,11 @@
 <form>
     <div class="form-group">
         <label></label>
-        <input type="text" class="form-control" placeholder="{{geolocationPlaceholder}}"
+        <input type="text" class="form-control autocomplete-focus-point" placeholder="{{geolocationPlaceholder}}"
                ng-model="$parent.formGeolocationAutocomplete" gm-places-autocomplete>
     </div>
     <div class="form-group">
-        <label>Radius</label>
+        <label class="green-color">Radius</label>
         <select class="form-control" ng-model="$parent.formGeolocationRadius" ng-change="$parent.updateVenues()">
             <option value="500">500</option>
             <option value="1000">1000</option>
@@ -15,7 +15,7 @@
         <small class="form-text text-muted">Meters</small>
     </div>
     <div class="form-group">
-        <label>Type</label>
+        <label class="green-color">Type</label>
         <select class="form-control" ng-model="$parent.formVenueType" ng-change="$parent.updateVenues()">
             <option value="">All</option>
             <option value="food">Food</option>

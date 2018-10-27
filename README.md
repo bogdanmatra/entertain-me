@@ -37,4 +37,4 @@ Other 3rd party libraries:
 * Google Maps API: https://cloud.google.com/maps-platform/
 * Google Maps Autocomplete adapter for Angular JS: https://github.com/jvandemo/angularjs-google-maps
 * Loader inspired from: https://www.w3schools.com/howto/howto_css_loader.asp
-* Favicon: https://favicon.io/emoji-favicons/partying-face/
+* Favicon: https://favicon.io/emoji-favicons/four-leaf-clover/
