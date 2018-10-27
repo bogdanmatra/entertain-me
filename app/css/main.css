@@ -48,3 +48,7 @@
 .green-color {
     color: #0ABF53;
 }
+
+tr th:first-child {
+    background: #f3f6f9;
+}
