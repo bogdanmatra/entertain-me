@@ -30,6 +30,10 @@
     }
 }
 
+tbody {
+    word-break: break-all;
+}
+
 /* Added some color */
 .autocomplete-focus-point {
     color: white;
@@ -49,6 +53,7 @@
     color: #0ABF53;
 }
 
-tr th:first-child {
+tr *:nth-child(odd) {
     background: #f3f6f9;
+    color: #0ABF53;
 }

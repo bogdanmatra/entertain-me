@@ -11,6 +11,11 @@ app.controller('VenuesController', function ($scope, $window, FoursquareAPIServi
     $scope.formVenueType = "";
     $scope.geolocationPlaceholder = "Choose a place...";
 
+    // Select all the text from the input.
+    $scope.selectAll = function ($event) {
+        $event.target.select();
+    };
+
     // Gets the new geolocation changed through the Google Maps Autocomplete Angular component.
     var getNewGeolocation = function () {
         var changedGeolocation = $scope.formGeolocationAutocomplete.getPlace().geometry.location;

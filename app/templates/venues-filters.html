@@ -2,7 +2,7 @@
     <div class="form-group">
         <label></label>
         <input type="text" class="form-control autocomplete-focus-point" placeholder="{{geolocationPlaceholder}}"
-               ng-model="$parent.formGeolocationAutocomplete" gm-places-autocomplete>
+               ng-model="$parent.formGeolocationAutocomplete" ng-click="selectAll($event)" gm-places-autocomplete>
     </div>
     <div class="form-group">
         <label class="green-color">Radius</label>

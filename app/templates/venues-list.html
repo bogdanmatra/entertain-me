@@ -9,7 +9,7 @@
     </thead>
     <tbody>
     <tr ng-cloak ng-repeat="venue in venues">
-        <th class="green-color" scope="row">{{$index + 1}}</th>
+        <th scope="row">{{$index + 1}}</th>
         <td>{{venue.name}}</td>
         <td>
             <span ng-repeat="category in venue.categories">
