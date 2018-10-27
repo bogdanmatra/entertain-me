@@ -1,4 +1,5 @@
-var app = angular.module("entertain-me", []);
+// Maps adapter to Angular: https://github.com/jvandemo/angularjs-google-maps
+var app = angular.module("entertain-me", ['gm']);
 
 app.constant('FoursquareConstants', {
     ENDPOINT: "https://api.foursquare.com/",
@@ -11,7 +12,7 @@ app.constant('FoursquareConstants', {
 
 });
 
-app.service('FoursquareAPI', function ($http, FoursquareConstants,) {
+app.service('FoursquareAPI', function ($http, FoursquareConstants) {
     this.getVenues = function (position) {
         return $http({
             url: FoursquareConstants.ENDPOINT + FoursquareConstants.VERSION + FoursquareConstants.VENUES_EXPLORE,
@@ -20,21 +21,37 @@ app.service('FoursquareAPI', function ($http, FoursquareConstants,) {
                 client_id: FoursquareConstants.CLIENT_ID,
                 client_secret: FoursquareConstants.CLIENT_SECRET,
                 v: FoursquareConstants.VERSIONING,
-                near: position.coords.latitude + FoursquareConstants.COORDINATE_SEPARATOR + position.coords.longitude
+                ll: position.latitude + FoursquareConstants.COORDINATE_SEPARATOR + position.longitude
             }
         }).then(function (response) {
             return response.data.response.groups[0].items.map(function (item) {
                 return item.venue;
             });
+        }).catch(function (response) {
+            alert(response.data.meta.errorDetail);
         });
     }
 });
 
-app.controller('VenuesController', function ($window, FoursquareAPI, $scope) {
-    $window.navigator.geolocation.watchPosition(function (position) {
+
+app.controller('VenuesController', function ($scope, $window, FoursquareAPI) {
+    $scope.updateVenues = function (position) {
         FoursquareAPI.getVenues(position).then(function (venues) {
             $scope.venues = venues;
         })
+    };
+
+    $scope.$on('gmPlacesAutocomplete::placeChanged', function () {
+        $scope.venues = [];
+        var newGeolocation = $scope.geolocationAutocomplete.getPlace().geometry.location;
+        $scope.updateVenues({
+            latitude: newGeolocation.lat(),
+            longitude: newGeolocation.lng()
+        });
+    });
+
+    $window.navigator.geolocation.getCurrentPosition(function (position) {
+        $scope.updateVenues(position.coords);
     }, function (error) {
         alert(error.message);
     });

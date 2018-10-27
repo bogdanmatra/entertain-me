@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Entertain Me</title>
-    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="shortcut icon" href="favicon.png"/>
 
     <!-- Entertain Me CSS start -->
     <link rel="stylesheet" href="app.css">
@@ -13,11 +13,19 @@
 
 <body>
 <div ng-app="entertain-me" ng-controller="VenuesController">
-    <div ng-cloak ng-repeat="venue in venues"> {{venue.name}} </div>
+    <input type="text" class="geolocation-autocomplete" gm-places-autocomplete ng-model="geolocationAutocomplete">
+    <div ng-cloak ng-repeat="venue in venues">
+        <span>{{venue.name}}</span>
+        <span ng-repeat="category in venue.categories">{{category.name}}</span>
+    </div>
 </div>
 
 <!-- CDN Angular JS 1.5.11 -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.js"></script>
+<!-- CDN Google Maps API  and Angular JS Google Maps adapter -->
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script src="http://jvandemo.github.io/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
+
 <!-- Entertain Me JS start -->
 <script src="app.js"></script>
 <!-- Entertain Me JS end-->
