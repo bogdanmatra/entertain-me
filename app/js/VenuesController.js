@@ -13,7 +13,7 @@ app.controller('VenuesController', function ($scope, $window, FoursquareAPIServi
 
     // Select all the text from the input.
     $scope.selectAll = function ($event) {
-        $event.target.setSelectionRange(0,99999);
+        $event.target.select();
     };
 
     // Gets the new geolocation changed through the Google Maps Autocomplete Angular component.
