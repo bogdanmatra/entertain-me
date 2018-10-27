@@ -13,7 +13,8 @@
         <td>{{venue.name}}</td>
         <td>
             <span ng-repeat="category in venue.categories">
-                <img ng-src="{{category.icon.prefix + 'bg_32' + category.icon.suffix}}" alt="Category">
+                <img class="venue-icon" alt="Category"
+                     ng-src="{{category.icon.prefix + 'bg_32' + category.icon.suffix}}">
                 <span>{{category.name}}</span>
             </span>
         </td>
