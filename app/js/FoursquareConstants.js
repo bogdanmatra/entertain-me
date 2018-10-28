@@ -1,8 +1,8 @@
+'use strict';
+
 /**
  * Foursquare API Constants.
  */
-'use strict';
-
 app.constant('FoursquareConstants', {
     ENDPOINT: "https://api.foursquare.com/",
     VERSION: "v2",

@@ -1,48 +1,29 @@
+'use strict';
+
 /**
  * Controls the main functionality of the application.
  * Sets current location if user accepts sharing his location.
  * Updates the venues list based on the user's selections.
  */
-'use strict';
-
-app.controller('VenuesController', function ($scope, $window, FoursquareAPIService) {
+app.controller('VenuesController', function ($scope, FoursquareAPIService, GeolocationService) {
 
     // Initialize variables.
-    var initialCoordinates, geolocationChanged = false;
+    $scope.initialGeolocationChanged = false;
     $scope.formGeolocationRadius = "500";
     $scope.formVenueType = "";
-    $scope.geolocationPlaceholder = "Choose a place...";
+    $scope.formGeolocationPlaceholder = "Choose a place...";
 
     // Select all the text from the input.
-    $scope.selectAll = function ($event) {
+    $scope.selectAllText = function ($event) {
         $event.target.select();
-    };
-
-    // Gets the new geolocation changed through the Google Maps Autocomplete Angular component.
-    var getNewGeolocation = function () {
-        var changedGeolocation = $scope.formGeolocationAutocomplete.getPlace().geometry.location;
-        return {
-            latitude: changedGeolocation.lat(),
-            longitude: changedGeolocation.lng()
-        }
-    };
-
-    // Gets the name of the user's geolocation using the Google Maps API and sets it as a placeholder.
-    var setGeolocationPlaceholder = function (coordinates) {
-        var currentGeoloction = new $window.google.maps.LatLng(coordinates.latitude, coordinates.longitude);
-        new $window.google.maps.Geocoder().geocode({'latLng': currentGeoloction},
-            function (results) {
-                if (results[0]) {
-                    $scope.geolocationPlaceholder = results[0].formatted_address;
-                }
-            });
     };
 
     // Updates venues list. The venue list is always retrieved through a new HTTP call.
     $scope.updateVenues = function () {
         $scope.loading = true;
         FoursquareAPIService.getVenues({
-            position: !geolocationChanged ? initialCoordinates : getNewGeolocation(),
+            position: !$scope.initialGeolocationChanged ?
+                $scope.initialCoordinates : GeolocationService.getAutocompleteCoordinates($scope.formGeolocationAutocomplete),
             radius: $scope.formGeolocationRadius || 500,
             section: $scope.formVenueType || "",
         }).then(function (venues) {
@@ -53,20 +34,20 @@ app.controller('VenuesController', function ($scope, $window, FoursquareAPIServi
 
     // Handles geolocation changes through the Google Maps Autocomplete Angular component.
     $scope.$on('gmPlacesAutocomplete::placeChanged', function () {
-        geolocationChanged = true;
+        $scope.initialGeolocationChanged = true;
         $scope.venues = [];
         $scope.updateVenues();
     });
 
     // Asks for user's location.
-    $window.navigator.geolocation.getCurrentPosition(function (data) {
+    GeolocationService.getCurrentGeolocationCoordinates().then(function (coordinates) {
         // Cache initial coordinates.
-        initialCoordinates = data.coords;
+        $scope.initialCoordinates = coordinates;
 
-        setGeolocationPlaceholder(data.coords);
+        GeolocationService.getGeolocationName(coordinates).then(function (geolocationName) {
+            $scope.formGeolocationPlaceholder = geolocationName;
+        });
         $scope.updateVenues();
-    }, function (error) {
-        console.log(error.message);
     });
 
 });

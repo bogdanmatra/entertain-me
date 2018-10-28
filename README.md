@@ -12,19 +12,24 @@ A simple single page application which shows the coolest venues around your loca
 * If the user does no agree, the placeholder will show "Choose a place...".
 * The user can choose a different place using the Google Maps Autocomplete component.
 * The user can change the radius of his search and the types of venues he wants to see.
-* Clicking the address in the venue list will show it on Google Maps.
+* Clicking the address in the venue list will show it on Google Maps (for some venues the location is not accurate due to the API data).
 * While the application is querying the Foursquare API, a loader is shown.
 
 ### Application Structure
 ```
-FoursquareConstants     $http
-        \               /
-        FoursquareAPIService    $window (Used for current geolocation approval and Google Maps API)
-                \               /
-                VenuesController
+FoursquareConstants     $http     $window     $q
+             \            |      /      \    /
+            FoursquareAPIService   GeolocationService  $scope
+                                 \         |          /
+                                    VenuesController
 ```
 
-Most of the application logic is in the `VenuesController.js` file. Based on the user changes in `venues-filters.html` the `venues-list.html` is updated.
+Based on the user changes in `venues-filters.html` the `venues-list.html` is updated.
+
+### Tests
+
+* Prerequisites: Install Node.js (https://nodejs.org/)
+* How to run tests: `npm install && npm test`
 
 ### Technical references
 

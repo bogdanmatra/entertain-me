@@ -1,3 +1,6 @@
 # Ignore IntelliJ IDEA specific files.
 .idea
 *.iml
+
+# Ignore libraries.
+node_modules

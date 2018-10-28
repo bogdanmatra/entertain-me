@@ -1,9 +1,9 @@
+'use strict';
+
 /**
  * A service which connects to the Foursquare HTTP API.
  */
-'use strict';
-
-app.service('FoursquareAPIService', function ($http, FoursquareConstants) {
+app.service('FoursquareAPIService', function ($http, FoursquareConstants, $window) {
     /**
      * Returns venues relative to a geolocation (https://developer.foursquare.com/docs/api/venues/explore).
      * Also supports `radius` (geolocation search radius) and `section` (the venue type).
@@ -27,7 +27,7 @@ app.service('FoursquareAPIService', function ($http, FoursquareConstants) {
                 return item.venue;
             });
         }).catch(function (response) {
-            alert(response.data.meta.errorDetail);
+            $window.alert(response.data.meta.errorDetail);
         });
     }
 });
