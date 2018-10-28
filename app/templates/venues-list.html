@@ -21,11 +21,13 @@
             </span>
         </td>
         <td>
-            <a ng-href="{{'https://www.google.com/maps?q=' + venue.location.formattedAddress[0]}}"  target=”_blank”>
+            <a ng-href="{{'https://www.google.com/maps?q=' + venue.location.formattedAddress[0]}}" target=”_blank”>
                 <i class="material-icons">place</i>
             </a>
         </td>
     </tr>
     </tbody>
 </table>
-<div class="loader" ng-show="loading"></div>
+<div class="loader-container">
+    <div class="loader" ng-show="loading"></div>
+</div>
