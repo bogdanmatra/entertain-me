@@ -35,18 +35,31 @@
 }
 
 /* Added some color */
-.autocomplete-focus-point {
-    color: white;
+body {
     background: linear-gradient(45deg, #0ABF53 0%, #4EE5E5 100%);
 }
 
-.autocomplete-focus-point::placeholder {
-    color: #ffffff8a;
+.container {
+    background: white;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
 .autocomplete-focus-point:focus {
-    color: white;
     box-shadow: 0 0 0 0.2rem #99e6bb;;
+}
+
+.search-icon i {
+    border: 1px solid #0ABF53;
+    padding: 6px;
+    border-radius: 5px 0 0 5px;
+    color: white;
+    background-color: #0ABF53;
+}
+
+.search-icon input {
+    border: 1px solid #0ABF53;
+    border-left: 0;
 }
 
 .green-color {

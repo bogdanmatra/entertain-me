@@ -1,8 +1,15 @@
 <form>
     <div class="form-group">
         <label></label>
-        <input type="text" class="form-control autocomplete-focus-point" placeholder="{{formGeolocationPlaceholder}}"
-               ng-model="$parent.formGeolocationAutocomplete" ng-focus="selectAllText($event)" gm-places-autocomplete>
+        <div class="input-group search-icon">
+            <span class="input-group-btn">
+                <i class="material-icons">search</i>
+            </span>
+            <input type="text" class="form-control autocomplete-focus-point"
+                   placeholder="{{formGeolocationPlaceholder}}"
+                   ng-model="$parent.formGeolocationAutocomplete" ng-focus="selectAllText($event)"
+                   gm-places-autocomplete>
+        </div>
     </div>
     <div class="form-group">
         <label class="green-color">Radius</label>
