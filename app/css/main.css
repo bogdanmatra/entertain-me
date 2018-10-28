@@ -23,17 +23,6 @@
     }
 }
 
-/* Venue icon mobile support */
-@media only screen and (max-width: 812px) {
-    .venue-icon {
-        max-width: 20px;
-    }
-
-    tbody {
-        font-size: 12px;
-    }
-}
-
 /* Added some color */
 body {
     background: linear-gradient(45deg, #0ABF53 0%, #4EE5E5 100%);
@@ -73,4 +62,18 @@ tr th:first-child, tr td:nth-child(3) {
 
 a .material-icons {
     color: #0ABF53;
+}
+
+/* Mobile support */
+@media only screen and (max-width: 812px) {
+    .venue-icon {
+        max-width: 20px;
+    }
+
+    tbody {
+        font-size: 12px;
+    }
+    body {
+        background: white;
+    }
 }

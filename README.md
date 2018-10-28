@@ -30,6 +30,7 @@ Based on the user changes in `venues-filters.html` the `venues-list.html` is upd
 
 * Prerequisites: Install Node.js (https://nodejs.org/)
 * How to run tests: `npm install && npm test`
+* OBS: Only one test was written for `VenuesController` as a proof of concept.
 
 ### Technical references
 
