@@ -29,7 +29,7 @@
 
 /* Added some color */
 body {
-    background: linear-gradient(45deg, #0ABF53 0%, #4EE5E5 100%);
+    background: linear-gradient(90deg, #0ABF53 0%, #4EE5E5 100%);
 }
 
 .container {
