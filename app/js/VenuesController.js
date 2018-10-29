@@ -40,14 +40,18 @@ app.controller('VenuesController', function ($scope, FoursquareAPIService, Geolo
     });
 
     // Asks for user's location.
+    $scope.loading = true;
     GeolocationService.getCurrentGeolocationCoordinates().then(function (coordinates) {
         // Cache initial coordinates.
         $scope.initialCoordinates = coordinates;
-
+        $scope.updateVenues();
         GeolocationService.getGeolocationName(coordinates).then(function (geolocationName) {
             $scope.formGeolocationPlaceholder = geolocationName;
+        }).catch(function () {
+            $scope.loading = false;
         });
-        $scope.updateVenues();
+    }).catch(function () {
+        $scope.loading = false;
     });
 
 });
