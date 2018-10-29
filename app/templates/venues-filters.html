@@ -8,12 +8,14 @@
             <input type="search" class="form-control autocomplete-focus-point"
                    placeholder="{{formGeolocationPlaceholder}}"
                    ng-model="$parent.formGeolocationAutocomplete" ng-focus="selectAllText($event)"
+                   ng-change="$parent.noGeolocationSelectedHandler()"
                    gm-places-autocomplete>
         </div>
     </div>
     <div class="form-group">
         <label class="green-color">Radius</label>
-        <select class="form-control" ng-model="$parent.formGeolocationRadius" ng-change="$parent.updateVenues()">
+        <select class="form-control" ng-model="$parent.formGeolocationRadius" ng-change="$parent.updateVenues()"
+                ng-disabled="moreFiltersDisabled">
             <option value="500">0.5 Km</option>
             <option value="1000">1 Km</option>
             <option value="5000">5 Km</option>
@@ -22,7 +24,8 @@
     </div>
     <div class="form-group">
         <label class="green-color">Type</label>
-        <select class="form-control" ng-model="$parent.formVenueType" ng-change="$parent.updateVenues()">
+        <select class="form-control" ng-model="$parent.formVenueType" ng-change="$parent.updateVenues()"
+                ng-disabled="moreFiltersDisabled">
             <option value="">All</option>
             <option value="food">Food</option>
             <option value="drinks">Drinks</option>

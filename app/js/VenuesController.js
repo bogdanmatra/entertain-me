@@ -8,10 +8,12 @@
 app.controller('VenuesController', function ($scope, FoursquareAPIService, GeolocationService) {
 
     // Initialize variables.
+    var NO_GEOLOCATION_PLACEHOLDER = "Choose a place...";
     $scope.initialGeolocationChanged = false;
     $scope.formGeolocationRadius = "500";
     $scope.formVenueType = "";
-    $scope.formGeolocationPlaceholder = "Choose a place...";
+    $scope.formGeolocationPlaceholder = NO_GEOLOCATION_PLACEHOLDER;
+    $scope.moreFiltersDisabled = true;
 
     // Select all the text from the input.
     $scope.selectAllText = function ($event) {
@@ -35,15 +37,25 @@ app.controller('VenuesController', function ($scope, FoursquareAPIService, Geolo
     // Handles geolocation changes through the Google Maps Autocomplete Angular component.
     $scope.$on('gmPlacesAutocomplete::placeChanged', function () {
         $scope.initialGeolocationChanged = true;
-        $scope.venues = [];
+        $scope.moreFiltersDisabled = false;
         $scope.updateVenues();
     });
+
+    $scope.noGeolocationSelectedHandler = function () {
+        if (!$scope.formGeolocationAutocomplete.getPlace) {
+            $scope.moreFiltersDisabled = true;
+            $scope.formGeolocationPlaceholder = NO_GEOLOCATION_PLACEHOLDER;
+            $scope.venues = [];
+        }
+    }
 
     // Asks for user's location.
     $scope.loading = true;
     GeolocationService.getCurrentGeolocationCoordinates().then(function (coordinates) {
         // Cache initial coordinates.
         $scope.initialCoordinates = coordinates;
+
+        $scope.moreFiltersDisabled = false;
         $scope.updateVenues();
         GeolocationService.getGeolocationName(coordinates).then(function (geolocationName) {
             $scope.formGeolocationPlaceholder = geolocationName;
