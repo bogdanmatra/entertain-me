@@ -3,8 +3,8 @@
 ### Entertain Me
 
 A simple single page application which shows the coolest venues around your location (using Foursquare API):
-* https://developer.foursquare.com/docs/api/venues/explore
-* https://developer.foursquare.com/docs/api/configuration/authentication
+* Venues endpoint: https://developer.foursquare.com/docs/api/venues/explore
+* Authentication: https://developer.foursquare.com/docs/api/configuration/authentication
 
 ### Feature list
 * The user enters the website (https://bogdanmatra.github.io/) and is prompted to share his geolocation.
@@ -31,6 +31,8 @@ Based on the user changes in `venues-filters.html` the `venues-list.html` is upd
 * Prerequisites: Install Node.js (https://nodejs.org/)
 * How to run tests: `npm install && npm test`
 * OBS: Only one test was written for `VenuesController` as a proof of concept.
+
+* Browsers manually tested on: latest Chrome (Mac OS X) and Chrome, Safari mobile browsers (Android and iOS)
 
 ### Technical references
 
