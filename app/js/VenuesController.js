@@ -8,11 +8,13 @@
 app.controller('VenuesController', function ($scope, FoursquareAPIService, GeolocationService) {
 
     // Initialize variables.
-    var NO_GEOLOCATION_PLACEHOLDER = "Choose a place...";
+    var NO_GEOLOCATION_PLACEHOLDER_DEFAULT = "Choose a place...";
+    var VENUE_RADIUS_DEFAULT = "500";
+    var VENUE_TYPE_DEFAULT = "";
     $scope.initialGeolocationChanged = false;
-    $scope.formGeolocationRadius = "500";
-    $scope.formVenueType = "";
-    $scope.formGeolocationPlaceholder = NO_GEOLOCATION_PLACEHOLDER;
+    $scope.formGeolocationRadius = VENUE_RADIUS_DEFAULT;
+    $scope.formVenueType = VENUE_TYPE_DEFAULT;
+    $scope.formGeolocationPlaceholder = NO_GEOLOCATION_PLACEHOLDER_DEFAULT;
     $scope.moreFiltersDisabled = true;
 
     // Select all the text from the input.
@@ -26,8 +28,8 @@ app.controller('VenuesController', function ($scope, FoursquareAPIService, Geolo
         FoursquareAPIService.getVenues({
             position: !$scope.initialGeolocationChanged ?
                 $scope.initialCoordinates : GeolocationService.getAutocompleteCoordinates($scope.formGeolocationAutocomplete),
-            radius: $scope.formGeolocationRadius || 500,
-            section: $scope.formVenueType || "",
+            radius: $scope.formGeolocationRadius || VENUE_RADIUS_DEFAULT,
+            section: $scope.formVenueType || VENUE_TYPE_DEFAULT,
         }).then(function (venues) {
             $scope.loading = false;
             $scope.venues = venues;
@@ -44,7 +46,7 @@ app.controller('VenuesController', function ($scope, FoursquareAPIService, Geolo
     $scope.noGeolocationSelectedHandler = function () {
         if (!$scope.formGeolocationAutocomplete.getPlace) {
             $scope.moreFiltersDisabled = true;
-            $scope.formGeolocationPlaceholder = NO_GEOLOCATION_PLACEHOLDER;
+            $scope.formGeolocationPlaceholder = NO_GEOLOCATION_PLACEHOLDER_DEFAULT;
             $scope.venues = [];
         }
     }
