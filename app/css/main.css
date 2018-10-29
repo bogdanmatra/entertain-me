@@ -4,7 +4,7 @@
 }
 
 /* Loader inspired from: https://www.w3schools.com/howto/howto_css_loader.asp */
-.loader {
+.entertain-me-loader {
     margin: auto;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
@@ -14,7 +14,7 @@
     animation: spin 2s linear infinite;
 }
 
-.loader-container {
+.entertain-me-loader-container {
     padding: 20px;
 }
 
@@ -32,17 +32,17 @@ body {
     background: linear-gradient(90deg, #0ABF53 0%, #4EE5E5 100%);
 }
 
-.container {
+.entertain-me-container {
     background: white;
     margin: 20px auto;
     border-radius: 10px;
 }
 
-.autocomplete-focus-point:focus, select.form-control:focus {
+.entertain-me-autocomplete:focus, select.form-control:focus {
     box-shadow: 0 0 0 0.2rem #99e6bb;;
 }
 
-.search-icon i {
+.entertain-me-search-icon i {
     border: 1px solid #0ABF53;
     padding: 6px;
     border-radius: 5px 0 0 5px;
@@ -50,12 +50,12 @@ body {
     background-color: #0ABF53;
 }
 
-.search-icon input {
+.entertain-me-search-icon input {
     border: 1px solid #0ABF53;
     border-left: 0;
 }
 
-.green-color {
+.entertain-me-green-color {
     color: #0ABF53;
 }
 
@@ -70,7 +70,7 @@ a .material-icons {
 
 /* Mobile support */
 @media only screen and (max-width: 812px) {
-    .venue-icon {
+    .entertain-me-venue-icon {
         max-width: 20px;
     }
 

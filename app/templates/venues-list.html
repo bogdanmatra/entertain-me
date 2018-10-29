@@ -1,7 +1,7 @@
 <table class="table">
     <thead>
     <tr>
-        <th class="green-color" scope="col">#</th>
+        <th class="entertain-me-green-color" scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Type</th>
         <th scope="col">
@@ -15,7 +15,7 @@
         <td>{{venue.name}}</td>
         <td>
             <span ng-repeat="category in venue.categories">
-                <img class="venue-icon" alt="Category"
+                <img class="entertain-me-venue-icon" alt="Category"
                      ng-src="{{category.icon.prefix + 'bg_32' + category.icon.suffix}}">
                 <span>{{category.name}}</span>
             </span>
@@ -28,6 +28,6 @@
     </tr>
     </tbody>
 </table>
-<div class="loader-container">
-    <div class="loader" ng-show="loading"></div>
+<div class="entertain-me-loader-container">
+    <div class="entertain-me-loader" ng-show="loading"></div>
 </div>
