@@ -6,7 +6,7 @@ A simple single page application which shows the coolest venues around your loca
 * Venues endpoint: https://developer.foursquare.com/docs/api/venues/explore
 * Authentication: https://developer.foursquare.com/docs/api/configuration/authentication
 
-### Feature list
+### Feature List
 * The user enters the website (https://bogdanmatra.github.io/) and is prompted to share his geolocation.
 * If the user agrees then the autocomplete placeholder (first input on the page) will be populated with his geolocation name.
 * If the user does no agree, the placeholder will show "Choose a place...".
@@ -35,7 +35,7 @@ Based on the user changes in `venues-filters.html` the `venues-list.html` is upd
 
 * Browsers manually tested on: latest Chrome, Firefox, Safari (Mac OS X) and Chrome, Safari mobile browsers (Android and iOS)
 
-### Technical references
+### Other Technical References
 
 Framework used:
 * Angular JS: https://code.angularjs.org/1.5.11/docs/guide/concepts
