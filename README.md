@@ -13,7 +13,7 @@ A simple single page application which shows the coolest venues around your loca
 * The user can choose a different place using the Google Maps Autocomplete component.
 * The user can change the radius of his search and the types of venues he wants to see.
 * When there is no geolocation selected, other filters must be disabled (radius, type).
-* Clicking the address in the venue list will show it on Google Maps (for some venues the location is not accurate due to the API data).
+* Clicking the pin (last column) in the venue list will open the address Google Maps (for some venues the location is not accurate due to the API data).
 * While the application is querying the Foursquare API, a loader is shown.
 
 ### Application Structure
