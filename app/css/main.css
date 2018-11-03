@@ -74,7 +74,7 @@ a .material-icons {
 }
 
 .entertain-me-logo img {
-    zoom: 0.2;
+    max-width: 100px;
 }
 
 .entertain-me-logo svg {
