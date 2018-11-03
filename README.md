@@ -1,6 +1,6 @@
 ## bogdanmatra.github.io
 
-![Logo](app/favicon.png =50x50)
+<img width="50" alt="Logo" src="https://bogdanmatra.github.io/app/favicon.png">
 
 ### Entertain Me
 
