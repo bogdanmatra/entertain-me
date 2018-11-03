@@ -1,4 +1,4 @@
-## bogdanmatra.github.io
+## https://bogdanmatra.github.io
 
 <img width="50" alt="Logo" src="https://bogdanmatra.github.io/app/favicon.png">
 
@@ -9,7 +9,7 @@ A simple single page application which shows the coolest venues around your loca
 * Authentication: https://developer.foursquare.com/docs/api/configuration/authentication
 
 ### Feature List
-* The user enters the website (https://bogdanmatra.github.io/) and is prompted to share his geolocation.
+* The user enters the website (hosted [here](https://bogdanmatra.github.io/)) and is prompted to share his geolocation.
 * If the user agrees then the autocomplete placeholder (first input on the page) will be populated with his geolocation name.
 * If the user does no agree, the placeholder will show "Choose a place...".
 * The user can choose a different place using the Google Maps Autocomplete component.
@@ -31,7 +31,7 @@ Based on the user changes in `venues-filters.html` the `venues-list.html` is upd
 
 ### Tests
 
-* Prerequisites: Install Node.js (https://nodejs.org/)
+* Prerequisites: Install Node.js - https://nodejs.org/
 * How to run tests: `npm install && npm test`
 * **OBS**: Only one test was written for `VenuesController` as a proof of concept.
 
