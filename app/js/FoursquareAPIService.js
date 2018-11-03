@@ -27,7 +27,7 @@ app.service('FoursquareAPIService', function ($http, FoursquareConstants, $windo
                 return item.venue;
             });
         }).catch(function (response) {
-            $window.alert(response.data.meta.errorDetail);
+            $window.alert(response.data ? response.data.meta.errorDetail : "Could not load data.");
         });
     }
 });

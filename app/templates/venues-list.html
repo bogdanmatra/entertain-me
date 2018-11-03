@@ -28,6 +28,10 @@
     </tr>
     </tbody>
 </table>
+<div class="text-center">
+    <span ng-show="!loading && !venues.length && moreFiltersDisabled">Please choose a place.</span>
+    <span ng-show="!loading && !venues.length && !moreFiltersDisabled">No venues here.</span>
+</div>
 <div class="entertain-me-loader-container">
     <div class="entertain-me-loader" ng-show="loading"></div>
 </div>

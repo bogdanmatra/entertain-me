@@ -59,12 +59,29 @@ body {
     color: #0ABF53;
 }
 
-tr th:first-child, tr td:nth-child(3) {
+tbody tr th:first-child, tbody tr td:nth-child(3) {
     background: #f3f6f9;
     color: #0ABF53;
 }
 
 a .material-icons {
+    color: #0ABF53;
+}
+
+/* Logo */
+.entertain-me-logo {
+    padding: 10px 0;
+}
+
+.entertain-me-logo img {
+    zoom: 0.2;
+}
+
+.entertain-me-logo svg {
+    float: right;
+}
+
+.entertain-me-logo .entertain-me-teaser {
     color: #0ABF53;
 }
 
@@ -77,7 +94,18 @@ a .material-icons {
     tbody {
         font-size: 12px;
     }
+
     body {
         background: white;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .entertain-me-logo svg {
+        display: none;
+    }
+
+    .entertain-me-logo .entertain-me-frog {
+        text-align: center;
     }
 }

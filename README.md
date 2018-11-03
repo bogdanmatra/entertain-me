@@ -1,5 +1,7 @@
 ## bogdanmatra.github.io
 
+![Logo](app/favicon.png =50x50)
+
 ### Entertain Me
 
 A simple single page application which shows the coolest venues around your location (using Foursquare API):
@@ -47,3 +49,8 @@ Other 3rd party libraries:
 * Loader inspired from: https://www.w3schools.com/howto/howto_css_loader.asp
 * Google Fonts (Material design): https://material.io/tools/icons/
 * Favicon: https://favicon.io/emoji-favicons/frog-face/
+* SVG created with: https://editor.method.ac/
+
+Desktop | Mobile
+------------ | -------------
+![Desktop](README-Desktop.png) | ![Mobile](README-Mobile.png)
