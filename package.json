@@ -12,6 +12,6 @@
     "karma-jasmine": "^1.1.2"
   },
   "scripts": {
-    "test": "karma start"
+    "test": "karma start --single-run"
   }
 }
