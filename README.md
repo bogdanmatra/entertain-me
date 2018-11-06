@@ -1,4 +1,4 @@
-### Entertain Me
+# Entertain Me
 
 <img width="50" alt="Logo" src="https://bogdanmatra.github.io/app/favicon.png">
 
