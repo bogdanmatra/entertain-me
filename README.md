@@ -1,8 +1,6 @@
-## https://bogdanmatra.github.io
+### Entertain Me
 
 <img width="50" alt="Logo" src="https://bogdanmatra.github.io/app/favicon.png">
-
-### Entertain Me
 
 A simple single page application which shows the coolest venues around your location (using Foursquare API):
 * Venues endpoint: https://developer.foursquare.com/docs/api/venues/explore
