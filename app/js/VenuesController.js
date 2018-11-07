@@ -31,16 +31,19 @@ app.controller('VenuesController', function ($scope, FoursquareAPIService, Geolo
             radius: $scope.formGeolocationRadius || VENUE_RADIUS_DEFAULT,
             section: $scope.formVenueType || VENUE_TYPE_DEFAULT,
         }).then(function (venues) {
-            $scope.loading = false;
             $scope.venues = venues;
+        }).finally(function () {
+            $scope.loading = false;
         })
     };
 
     // Handles geolocation changes through the Google Maps Autocomplete Angular component.
     $scope.$on('gmPlacesAutocomplete::placeChanged', function () {
-        $scope.initialGeolocationChanged = true;
-        $scope.moreFiltersDisabled = false;
-        $scope.updateVenues();
+        if ($scope.formGeolocationAutocomplete.getPlace().geometry) {
+            $scope.initialGeolocationChanged = true;
+            $scope.moreFiltersDisabled = false;
+            $scope.updateVenues();
+        }
     });
 
     $scope.noGeolocationSelectedHandler = function () {
@@ -61,10 +64,10 @@ app.controller('VenuesController', function ($scope, FoursquareAPIService, Geolo
         $scope.updateVenues();
         GeolocationService.getGeolocationName(coordinates).then(function (geolocationName) {
             $scope.formGeolocationPlaceholder = geolocationName;
-        }).catch(function () {
+        }).finally(function () {
             $scope.loading = false;
         });
-    }).catch(function () {
+    }).finally(function () {
         $scope.loading = false;
     });
 
