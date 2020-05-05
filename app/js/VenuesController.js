@@ -24,6 +24,7 @@ app.controller('VenuesController', function ($scope, FoursquareAPIService, Geolo
 
     // Updates venues list. The venue list is always retrieved through a new HTTP call.
     $scope.updateVenues = function () {
+        $scope.venues = [];
         $scope.loading = true;
         FoursquareAPIService.getVenues({
             position: !$scope.initialGeolocationChanged ?
